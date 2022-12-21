@@ -1,12 +1,14 @@
 import streamlit as st
 import json
 from model import Model
+from dotenv import dotenv_values
 
+config = dotenv_values(".env")
 
 connection_data = {
-    'api_url': 'https://datasphere.api.cloud.yandex.net/datasphere/v1/nodes/5a49c54e-e206-4ab7-96b7-e37b468ce953:execute',
-    'folder_id': 'b1g6ceqjotq7gji5heli',
-    'token_url': 'https://functions.yandexcloud.net/d4e1q0o089bedv9kbhea'
+    'api_url': config['API_URL'],
+    'folder_id': config['FOLDER_ID'],
+    'token_url': config['TOKEN_URL']
 }
 
 

@@ -1,3 +1,4 @@
 streamlit
 seleniumbase
 opencv-python
+python-dotenv
