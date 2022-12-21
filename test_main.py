@@ -37,6 +37,6 @@ class ComponentsTest(BaseCase):
     def test_right_answer(self):
         model = Model(json)
         res = model.get_answer(
-            'Как тебя зовут?', 'Меня зовут Петр, мне тридцать лет, я из города Санкт-Петребург')
+            'Как тебя зовут?', 'Мне тридцать лет, Меня зовут Петр, я из города Санкт-Петребург')
         time.sleep(10)
         assert res['answer'].find('Петр') > 0
