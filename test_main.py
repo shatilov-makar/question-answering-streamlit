@@ -6,7 +6,7 @@ from model import Model
 json = {
     'api_url': 'https://datasphere.api.cloud.yandex.net/datasphere/v1/nodes/5a49c54e-e206-4ab7-96b7-e37b468ce953:execute',
     'folder_id': 'b1g6ceqjotq7gji5heli',
-    'token_url': 'https://functions.yandexcloud.net/d4e1q0o089bedv9kbhll'
+    'token_url': 'https://functions.yandexcloud.net/d4e1q0o089bedv9kbhea'
 }
 
 
