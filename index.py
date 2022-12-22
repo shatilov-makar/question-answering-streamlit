@@ -2,13 +2,12 @@ import streamlit as st
 import json
 from model import Model
 from dotenv import dotenv_values
-
-config = dotenv_values(".env")
+import streamlit as st
 
 connection_data = {
-    'api_url': config['API_URL'],
-    'folder_id': config['FOLDER_ID'],
-    'token_url': config['TOKEN_URL']
+    'api_url':  st.secrets['API_URL'],
+    'folder_id':  st.secrets['FOLDER_ID'],
+    'token_url':  st.secrets['TOKEN_URL']
 }
 
 

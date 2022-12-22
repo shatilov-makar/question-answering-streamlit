@@ -39,7 +39,8 @@ jobs:
           seleniumbase install chromedriver latest
       - name: 'Create env file'
         run: |
-          echo "${{ secrets.ENV_FILE }}" > .env
+          mkdir .streamlit && touch .streamlit/secrets.toml
+          echo "${{ secrets.ENV_FILE }}" > .streamlit/secrets.toml
       - name: Test with pytest
         run: |
           pytest

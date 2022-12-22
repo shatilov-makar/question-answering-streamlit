@@ -1,3 +1,4 @@
 *_logs
 *cache*
 .env
+.streamlit
