@@ -1,8 +1,5 @@
 import streamlit as st
-import json
 from model import Model
-from dotenv import dotenv_values
-import streamlit as st
 
 connection_data = {
     'api_url':  st.secrets['API_URL'],
