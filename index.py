@@ -10,7 +10,6 @@ connection_data = {
 
 st.title('Multilingual-finedtuned-ru ')
 hint_text = "**Вывод**"
-error_text = '**Нужно загрузить модель, для этого [перейдите на страницу модели](https://huggingface.co/makarshatilov/transliteration_v1), нажмите Compute, немного подождите пока модель не загрузится, а затем перезагрузите текущую страницу**'
 description_text = "Модель способная находить ответы на вопросы из контекста."
 st.subheader(description_text)
 
@@ -22,17 +21,18 @@ button = st.button('Получить ответ')
 model = Model(connection_data)
 
 
-if button and text_question != '' and text_context != '':
+if button and len(text_question.strip()) > 0 and len(text_context.strip()) > 0:
     response = model.get_answer(text_question, text_context)
-    if ('error' in response):
-        st.markdown(error_text, unsafe_allow_html=False)
-    else:
+    if ('answer' in response):
         st.markdown(hint_text)
         st.write(f"""
                  Оценка: {response['score']}\n
                  Ответ: {response['answer']}\n
                  Ссылка для ознакомления с моделью: https://huggingface.co/AlexKay/xlm-roberta-large-qa-multilingual-finedtuned-ru
                   """)
+    else:
+        st.markdown(list(response.values())[0], unsafe_allow_html=False)
 else:
     st.markdown(hint_text)
+
 
