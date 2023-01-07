@@ -12,11 +12,7 @@ class Model:
             self.headers = {"Authorization": f'Bearer {token}',
                             "Content-Type": "application/json"}
         except requests.exceptions.RequestException as e:
-<<<<<<< HEAD
             return None
-=======
-            return {'internal_error': 'Ошибка при подключении к модели'}
->>>>>>> fb441e630705bd0b5b452d76483a6926d2279111
 
     def __query(self, data):
         if (len(self.headers['Authorization']) == 193):
@@ -30,7 +26,7 @@ class Model:
             return {'internal_error': 'Ошибка при подключении к модели'}
 
     def get_answer(self, question, context):
-        if (len(question) > 0 and len(context)):
+        if (len(question.strip()) > 0 and len(context.strip()) > 0):
             json_data = {"folder_id": self.folder_id, "input": {"input_str": {
                 "question": question, "context": context}}}
             data = json.dumps(json_data)
@@ -38,8 +34,4 @@ class Model:
             if (not 'output' in response):
                 return {'internal_error': 'Ошибка при подключении к модели'}
             return response['output']['output_str']
-<<<<<<< HEAD
         return {"input_error": "Для вычисления ответа нужно написать вопрос и определить контекст!"}
-=======
-        return {"input_error": "Для вычисления ответа нужно написать вопрос и определить контекст!"}
->>>>>>> fb441e630705bd0b5b452d76483a6926d2279111

@@ -21,7 +21,7 @@ button = st.button('Получить ответ')
 model = Model(connection_data)
 
 
-if button and len(text_question.strip()) > 0 and len(text_context.strip()) > 0:
+if button:
     response = model.get_answer(text_question, text_context)
     if ('answer' in response):
         st.markdown(hint_text)
