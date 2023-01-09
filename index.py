@@ -8,9 +8,9 @@ connection_data = {
 }
 
 
-st.title('Multilingual-finedtuned-ru ')
+st.title('Multilingual Question Answering')
 hint_text = "**Вывод**"
-description_text = "Модель способная находить ответы на вопросы из контекста."
+description_text = "Модель способная находить ответы на вопросы из контекста"
 st.subheader(description_text)
 
 text_question = st.text_input(label='Введите вопрос')
@@ -34,5 +34,3 @@ if button:
         st.markdown(list(response.values())[0], unsafe_allow_html=False)
 else:
     st.markdown(hint_text)
-
-

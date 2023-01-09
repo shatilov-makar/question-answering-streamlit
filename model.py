@@ -15,7 +15,7 @@ class Model:
             return None
 
     def __query(self, data):
-        if (len(self.headers['Authorization']) == 193):
+        if len(self.headers['Authorization']) == 193:
             try:
                 response = requests.request(
                     "POST", self.api_url, headers=self.headers, data=data)
@@ -26,7 +26,7 @@ class Model:
             return {'internal_error': 'Ошибка при подключении к модели'}
 
     def get_answer(self, question, context):
-        if (len(question.strip()) > 0 and len(context.strip()) > 0):
+        if question.strip() and context.strip():
             json_data = {"folder_id": self.folder_id, "input": {"input_str": {
                 "question": question, "context": context}}}
             data = json.dumps(json_data)
