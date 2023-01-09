@@ -9,7 +9,7 @@
 Алгоритм работы:
 1. Ввод вопроса, на который пользователь хочет получить ответ;
 2. Ввод текста, к которому будет задаваться вопрос;
-3. Обработка результата с помощью модели https://huggingface.co/AlexKay/xlm-roberta-large-qa-multilingual-finedtuned-ru
+3. Обработка результата с помощью модели https://huggingface.co/AlexKay/xlm-roberta-large-qa-multilingual-finedtuned-ru;
 4. Вывод полученного результата с точностью.
 
 
