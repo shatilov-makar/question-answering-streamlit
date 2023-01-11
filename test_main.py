@@ -29,7 +29,7 @@ def test_big_context_answer_ru():
     assert res['answer'].find('A320') > 0
 
 
-def test_big_context_answer_ru():
+def test_big_context_answer_en():
     model = Model(connection_data)
     res = model.get_answer(
         'Who is in charge of the company?', "Airbus's registered headquarters is in Leiden, Netherlands, but its head office is located in Toulouse, France. The 'SE' in its corporate name means it is a societas Europaea, which enables it to be registered as a European rather than a national corporation. Its shares are traded in France, Germany and Spain. The company is led by CEO Guillaume Faury and is a component of the Euro Stoxx 50 stock market index")

@@ -1,3 +1,5 @@
+[![Python application](https://github.com/shatilov-makar/question-answering-streamlit/actions/workflows/python-app.yml/badge.svg)](https://github.com/shatilov-makar/question-answering-streamlit/actions/workflows/python-app.yml)
+
 # Проект по дисциплине "Программная инженерия"
 
 ## Состав команды:
