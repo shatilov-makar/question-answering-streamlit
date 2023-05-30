@@ -1,14 +1,21 @@
 import json
 import requests
+import streamlit as st
 
+
+connection_data = {
+    'api_url':  st.secrets['API_URL'],
+    'folder_id':  st.secrets['FOLDER_ID'],
+    'token_url':  st.secrets['TOKEN_URL']
+}
 
 class Model:
     def __init__(self, API):
-        self.api_url = API['api_url']
-        self.folder_id = API['folder_id']
+        self.api_url = st.secrets['API_URL']
+        self.folder_id = st.secrets['FOLDER_ID']
         try:
             token = requests.request(
-                "GET", API['token_url']).content.decode()
+                "GET",st.secrets['TOKEN_URL']).content.decode()
             self.headers = {"Authorization": f'Bearer {token}',
                             "Content-Type": "application/json"}
         except requests.exceptions.RequestException as e:
@@ -31,7 +38,7 @@ class Model:
                 "question": question, "context": context}}}
             data = json.dumps(json_data)
             response = self.__query(data)
-            if (not 'output' in response):
-                return {'internal_error': 'Ошибка при подключении к модели'}
+           # if (not 'output' in response):
+           #     return {'internal_error': 'Ошибка при подключении к модели'}
             return response['output']['output_str']
-        return {"input_error": "Для вычисasdasdaления ответа нужно написать вопрос и определить контекст!"}
+        #return {"input_error": "Для вычисasdasdaления ответа нужно написать вопрос и определить контекст!"}
