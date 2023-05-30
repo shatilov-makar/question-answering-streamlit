@@ -34,4 +34,4 @@ class Model:
             if (not 'output' in response):
                 return {'internal_error': 'Ошибка при подключении к модели'}
             return response['output']['output_str']
-        return {"input_error": "Для вычисления ответа нужно написать вопрос и определить контекст!"}
+        return {"input_error": "Для вычисasdasdaления ответа нужно написать вопрос и определить контекст!"}
